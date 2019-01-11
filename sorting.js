@@ -20,14 +20,19 @@ var students = [
 ];
 
 students.sort(function(a, b){
-   students.forEach(function(name) {
-      var nameA = a.name.toUpperCase(); 
-      var nameB = b.name.toUpperCase(); 
-      // if (a === b) {
-      //    return 0;
-      // }
-      // if (a > b) {
-      //    return ;
-      // }
-   })
-})
+   var nameA = a.name.toUpperCase(); 
+   var nameB = b.name.toUpperCase(); 
+   if (nameA < nameB) {
+      return -1;
+   }
+   if (nameA > nameB) {
+      return 1 ;
+   }
+   if (nameA === nameB) {
+      if (a.age < b.age) {    
+      return 1;
+      }
+   }
+   return 0;
+});
+console.log(students);
